@@ -14,6 +14,7 @@
 		E4C090811B2C1F6700EDB52C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C090801B2C1F6700EDB52C /* Images.xcassets */; };
 		E4C090841B2C1F6700EDB52C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C090821B2C1F6700EDB52C /* LaunchScreen.xib */; };
 		E4C090901B2C1F6800EDB52C /* ZZDateUseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0908F1B2C1F6700EDB52C /* ZZDateUseTests.m */; };
+		E4C0909C1B2C1F8600EDB52C /* ZZDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0909B1B2C1F8600EDB52C /* ZZDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E4C090891B2C1F6700EDB52C /* ZZDateUseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZDateUseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C0908E1B2C1F6700EDB52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C0908F1B2C1F6700EDB52C /* ZZDateUseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDateUseTests.m; sourceTree = "<group>"; };
+		E4C0909A1B2C1F8600EDB52C /* ZZDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDate.h; sourceTree = "<group>"; };
+		E4C0909B1B2C1F8600EDB52C /* ZZDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		E4C090721B2C1F6700EDB52C /* ZZDateUse */ = {
 			isa = PBXGroup;
 			children = (
+				E4C0909D1B2C415800EDB52C /* Class */,
 				E4C090771B2C1F6700EDB52C /* AppDelegate.h */,
 				E4C090781B2C1F6700EDB52C /* AppDelegate.m */,
 				E4C0907A1B2C1F6700EDB52C /* ViewController.h */,
@@ -117,6 +121,23 @@
 				E4C0908E1B2C1F6700EDB52C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4C090991B2C1F7000EDB52C /* ZZDate */ = {
+			isa = PBXGroup;
+			children = (
+				E4C0909A1B2C1F8600EDB52C /* ZZDate.h */,
+				E4C0909B1B2C1F8600EDB52C /* ZZDate.m */,
+			);
+			name = ZZDate;
+			sourceTree = "<group>";
+		};
+		E4C0909D1B2C415800EDB52C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E4C090991B2C1F7000EDB52C /* ZZDate */,
+			);
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C0907C1B2C1F6700EDB52C /* ViewController.m in Sources */,
+				E4C0909C1B2C1F8600EDB52C /* ZZDate.m in Sources */,
 				E4C090791B2C1F6700EDB52C /* AppDelegate.m in Sources */,
 				E4C090761B2C1F6700EDB52C /* main.m in Sources */,
 			);

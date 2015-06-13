@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
-
+#import "ZZDate.h"
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *yestaday;
+@property (weak, nonatomic) IBOutlet UILabel *today;
+@property (weak, nonatomic) IBOutlet UILabel *tomorrow;
 
 @end
 
@@ -17,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
