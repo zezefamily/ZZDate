@@ -10,6 +10,28 @@
 
 @implementation ZZDate
 
++ (NSString *)getTimsStrWithString:(NSString *)time
+{
+    NSString *timeStr = nil;
+    
+    NSDateComponents *components = [ZZDate readTodayInfoWithDate:nil];
+    if(components.month <10&&components.day < 10){
+        
+        timeStr = [NSString stringWithFormat:@"%ld0%ld0%ld%@00",components.year,components.month,components.day,time];
+        
+    }else if(components.month <10 &&components.day >=10){
+        
+        timeStr = [NSString stringWithFormat:@"%ld0%ld%ld%@00",components.year,components.month,components.day,time];
+        
+    }else if(components.month >10 &&components.day <10){
+        
+        timeStr = [NSString stringWithFormat:@"%ld%ld0%ld%@00",components.year,components.month,components.day,time];
+    }else{
+        
+        timeStr = [NSString stringWithFormat:@"%ld%ld%ld%@00",components.year,components.month,components.day,time];
+    }
+    return timeStr;
+}
 
 + (NSDateComponents *)readTodayInfoWithDate:(NSDate *)date
 {
@@ -23,8 +45,6 @@
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh"];
     [calendar setLocale:locale];
     NSDateComponents *dateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekOfMonth | kCFCalendarUnitWeekday | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekOfYear fromDate:_date];
-    
-    
     
     return dateComponents;
 }
@@ -83,6 +103,7 @@
     NSString *timeSp = [NSString stringWithFormat:@"%.0f",[locateDate timeIntervalSince1970]];
     return timeSp;
 }
+
 
 
 + (NSDate *)getLoctionTime

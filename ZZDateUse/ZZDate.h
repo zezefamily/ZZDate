@@ -77,4 +77,9 @@
  */
 + (NSDate *)locateDateWithTimeInterValSinceNow:(NSTimeInterval)secs;
 
+
+
++ (NSString *)getTimsStrWithString:(NSString *)time;
+
+
 @end
