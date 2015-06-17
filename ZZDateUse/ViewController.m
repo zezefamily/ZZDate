@@ -21,7 +21,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"str == %@",[ZZDate getTimsStrWithString:@"12"]);
+    //NSLog(@"str == %@",[ZZDate getTimsStrWithString:@"12"]);
+    
+    
+    NSLog(@"str == %@",[ZZDate testWithTimeStr:@"13"]);
 }
 
 - (void)didReceiveMemoryWarning {

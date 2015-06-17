@@ -79,7 +79,9 @@
 
 
 
-+ (NSString *)getTimsStrWithString:(NSString *)time;
++(NSString *)testWithTimeStr:(NSString *)time;
+
+
 
 
 @end

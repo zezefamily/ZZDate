@@ -10,6 +10,22 @@
 
 @implementation ZZDate
 
++(NSString *)testWithTimeStr:(NSString *)time
+{
+    NSString *timeStr = [self getTimsStrWithString:time];
+    NSLog(@"timeStr == %@",timeStr);
+    
+    NSDateFormatter *matter = [[NSDateFormatter alloc]init];
+    [matter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSDate *nowDate = [matter dateFromString:timeStr];
+    NSLog(@"date == %@",nowDate);
+    
+    NSString *timeSp = [NSString stringWithFormat:@"%.0f",[nowDate timeIntervalSince1970]];
+    return timeSp;
+}
+
+
 + (NSString *)getTimsStrWithString:(NSString *)time
 {
     NSString *timeStr = nil;
@@ -17,18 +33,18 @@
     NSDateComponents *components = [ZZDate readTodayInfoWithDate:nil];
     if(components.month <10&&components.day < 10){
         
-        timeStr = [NSString stringWithFormat:@"%ld0%ld0%ld%@00",components.year,components.month,components.day,time];
+        timeStr = [NSString stringWithFormat:@"%ld-0%ld-0%ld %@:00:00",components.year,components.month,components.day,time];
         
     }else if(components.month <10 &&components.day >=10){
         
-        timeStr = [NSString stringWithFormat:@"%ld0%ld%ld%@00",components.year,components.month,components.day,time];
+        timeStr = [NSString stringWithFormat:@"%ld-0%ld-%ld %@:00:00",components.year,components.month,components.day,time];
         
     }else if(components.month >10 &&components.day <10){
         
-        timeStr = [NSString stringWithFormat:@"%ld%ld0%ld%@00",components.year,components.month,components.day,time];
+        timeStr = [NSString stringWithFormat:@"%ld-%ld-0%ld %@:00:00",components.year,components.month,components.day,time];
     }else{
         
-        timeStr = [NSString stringWithFormat:@"%ld%ld%ld%@00",components.year,components.month,components.day,time];
+        timeStr = [NSString stringWithFormat:@"%ld-%ld-%ld %@:00:00",components.year,components.month,components.day,time];
     }
     return timeStr;
 }
@@ -89,10 +105,15 @@
     [matter dateFromString:@"yyyy-MM-dd HH:mm:ss"];
     [matter stringFromDate:comfromTimesp];
     
+    
     NSDate *locateDate = [comfromTimesp dateByAddingTimeInterval:interval];
     
     return locateDate;
 }
+
+
+
+
 #pragma mark - 将 标准当前时间 ==> 时间戳
 + (NSString *)changeNowTimeToTimeStampWithTime
 {
